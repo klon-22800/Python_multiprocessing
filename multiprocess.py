@@ -1,5 +1,4 @@
 import re
-from itertools import starmap
 from time import time
 from multiprocessing import Pool
 
@@ -32,8 +31,6 @@ def main() -> None:
     print(
         "Укажите слово для поиска и название файлов через запятую в фомате: keyword, filename1.txt, ..."
     )
-    ## Пример для запроса
-    ## Выбор, Demons.txt, War and peace.txt, The gambler.txt, The idiot.txt, The Karamazov brothers.txt, Crime and punishment.txt, The insulted and the injured.txt
     data = input().split(", ")
     key_word = data[0].lower()
     paths = data[1:]
@@ -47,4 +44,6 @@ def main() -> None:
 
 
 if __name__ == "__main__":
+    ## Пример для запроса
+    ## Выбор, Demons.txt, War and peace.txt, The gambler.txt, The idiot.txt, The Karamazov brothers.txt, Crime and punishment.txt, The insulted and the injured.txt
     main()
