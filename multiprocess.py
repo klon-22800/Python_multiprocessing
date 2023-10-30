@@ -1,4 +1,5 @@
 import re
+import sys
 from time import time
 from multiprocessing import Pool
 
@@ -28,10 +29,7 @@ def find(key_word: str, path: str) -> None:
 
 
 def main() -> None:
-    print(
-        "Укажите слово для поиска и название файлов через запятую в фомате: keyword, filename1.txt, ..."
-    )
-    data = input().split(", ")
+    data = sys.argv[1::]
     key_word = data[0].lower()
     paths = data[1:]
     key_word = [key_word] * len(paths)
@@ -45,5 +43,5 @@ def main() -> None:
 
 if __name__ == "__main__":
     ## Пример для запроса
-    ## Выбор, Demons.txt, War and peace.txt, The gambler.txt, The idiot.txt, The Karamazov brothers.txt, Crime and punishment.txt, The insulted and the injured.txt
+    ## Выбор Demons.txt War_and_peace.txt The_gambler.txt The_idiot.txt The_Karamazov_brothers.txt Crime_and_punishment.txt The_insulted_and_the_injured.txt
     main()
